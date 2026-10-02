@@ -1,0 +1,19 @@
+[package]
+name = "pp_lab"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+publish = false
+
+[lib]
+name = "pp_lab"
+path = "src/lib.rs"
+
+# Имя harness обязательно: проверяющий скрипт ищет именно этот бинарь.
+[[bin]]
+name = "harness"
+path = "src/bin/harness.rs"
+
+[profile.release]
+# Символы нужны профилировщику и детектору гонок.
+debug = true
